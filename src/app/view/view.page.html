@@ -1,0 +1,19 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar>
+    <ion-title>view</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar (keypress)="onChange($event)"></ion-searchbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let data of filteredData">
+    <ion-card-header>
+      <ion-card-title>{{ data.Title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ data.Content }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
